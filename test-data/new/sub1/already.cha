@@ -1,0 +1,10 @@
+@UTF8
+@Begin
+@Languages:	eng
+@Participants:	CHI Child, MOT Mother
+@ID:	eng|bates|CHI|1;08.|female|normal||Child|||
+@ID:	eng|bates|MOT|||||Mother|||
+@Comment:	Out of date @Types should be replaced
+@Types:	sub1, sub2, sub3
+*CHI:	word .
+@End
