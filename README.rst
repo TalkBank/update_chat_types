@@ -6,8 +6,8 @@ Update @Types header in CHAT files
 What it does
 ------------
 
-``update_chat_types`` looks at CHAT files and updates the ``@Types''
-header if needed, based on the existence of ``0types.txt'' in a file's
+``update_chat_types`` looks at CHAT files and updates the ``@Types``
+header if needed, based on the existence of ``0types.txt`` in a file's
 immediate directory. If no header currently exists, it is inserted
 before the first utterance.
 
