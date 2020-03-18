@@ -6,4 +6,5 @@
 @ID:	eng|bates|MOT|||||Mother|||
 @Comment:	@Types should be inserted before first utterance.
 *CHI:	word .
+*CHI:	word word .
 @End

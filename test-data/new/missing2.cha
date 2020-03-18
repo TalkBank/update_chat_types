@@ -7,4 +7,5 @@
 @Comment:	@Types should be inserted before first utterance.
 @Types:	top1, top2, top3
 *CHI:	word .
+*CHI:	word word .
 @End
