@@ -38,12 +38,14 @@ def test_update_old_types():
 @Comment:\tcomment
 @Types:\told1, old2, old3
 *CHI:\tword .
+*CHI:\tword word .
 @End
 """
     new_contents = """@Begin
 @Comment:\tcomment
 @Types:\ttop1, top2, top3
 *CHI:\tword .
+*CHI:\tword word .
 @End
 """
     assert has_types_header(contents)
@@ -55,12 +57,14 @@ def test_insert_new_types():
     contents = """@Begin
 @Comment:\tcomment
 *CHI:\tword .
+*CHI:\tword word .
 @End
 """
     new_contents = """@Begin
 @Comment:\tcomment
 @Types:\ttop1, top2, top3
 *CHI:\tword .
+*CHI:\tword word .
 @End
 """
     assert not (has_types_header(contents))

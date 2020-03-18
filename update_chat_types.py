@@ -84,9 +84,13 @@ def updated_contents(contents: str, types_header: str) -> Optional[str]:
     """Return updated contents, if anything changed, else None.
     """
     if has_types_header(contents):
+        # Replace all.
         new_contents, num = RE_TYPES_HEADER.subn(types_header, contents)
     else:
-        new_contents, num = RE_AT_FIRST_UTTERANCE.subn(types_header + "\n", contents)
+        # Replace only at first utterance.
+        new_contents, num = RE_AT_FIRST_UTTERANCE.subn(
+            types_header + "\n", contents, count=1
+        )
     if num > 0:
         return new_contents
     else:
