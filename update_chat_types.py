@@ -91,7 +91,7 @@ def updated_contents(contents: str, types_header: str) -> Optional[str]:
         new_contents, num = RE_AT_FIRST_UTTERANCE.subn(
             types_header + "\n", contents, count=1
         )
-    if num > 0:
+    if new_contents != contents:
         return new_contents
     else:
         return None
