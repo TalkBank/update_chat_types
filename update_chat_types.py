@@ -118,14 +118,18 @@ def collect_chat_types(chatdir: str) -> Tuple[Set[str], Dict[str, Optional[str]]
     types_dirs: Set[str] = set()
     # Map from dir to which closest dir has 0types.txt, if any at all.
     types_dict: Dict[str, Optional[str]] = {}
-    for dir_path, dir_names, file_names in os.walk(chatdir):
+    for dir_path, dir_names, file_names in os.walk(chatdir, topdown=True):
         if ".git" in dir_names:
             dir_names.remove(".git")
         if "0types.txt" in file_names:
             types_dirs.add(dir_path)
             types_dict[dir_path] = dir_path
-        else:
+        elif dir_path == chatdir:
             types_dict[dir_path] = None
+        else:
+            # Inherit from the parent's (already filled in top-down).
+            parent_dir_path = os.path.dirname(dir_path)
+            types_dict[dir_path] = types_dict[parent_dir_path]
     return (types_dirs, types_dict)
 
 

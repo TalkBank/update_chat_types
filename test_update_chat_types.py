@@ -30,7 +30,7 @@ def test_collect_chat_types():
         "test-data/old/side": None,
         "test-data/old/sub0": "test-data/old/sub0",
         "test-data/old/sub0/sub1": "test-data/old/sub0/sub1",
-        "test-data/old/sub0/sub1/sub2": None,
+        "test-data/old/sub0/sub1/sub2": "test-data/old/sub0/sub1",  # parent
     }
 
 
@@ -146,4 +146,4 @@ def test_update_chat_types():
         shutil.copytree(OLD_CHAT_DIR, copied_chat_dir)
         num_updated = update_chat_types(copied_chat_dir)
         assert_dir_trees_equal(copied_chat_dir, EXPECTED_CHAT_DIR)
-        assert num_updated == 8
+        assert num_updated == 12
