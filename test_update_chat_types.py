@@ -24,11 +24,13 @@ def test_collect_chat_types():
     Make sure types info calculated properly.
     """
     (types_dirs, types_dict) = collect_chat_types(OLD_CHAT_DIR)
-    assert types_dirs == set(["test-data/old", "test-data/old/sub1"])
+    assert types_dirs == set(["test-data/old/sub0", "test-data/old/sub0/sub1"])
     assert types_dict == {
-        "test-data/old": "test-data/old",
-        "test-data/old/sub1": "test-data/old/sub1",
-        "test-data/old/sub1/sub2": None,
+        "test-data/old": None,
+        "test-data/old/side": None,
+        "test-data/old/sub0": "test-data/old/sub0",
+        "test-data/old/sub0/sub1": "test-data/old/sub0/sub1",
+        "test-data/old/sub0/sub1/sub2": None,
     }
 
 
@@ -75,7 +77,7 @@ def test_read_types():
     """
     Make sure parsing of 0types.txt file works.
     """
-    types_info = read_types(os.path.join(OLD_CHAT_DIR, "0types.txt"))
+    types_info = read_types(os.path.join(OLD_CHAT_DIR, "sub0", "0types.txt"))
     assert types_info == "@Types:\ttop1, top2, top3"
 
 

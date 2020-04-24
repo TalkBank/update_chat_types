@@ -4,7 +4,7 @@
 @Participants:	CHI Child, MOT Mother
 @ID:	eng|bates|CHI|1;08.|female|normal||Child|||
 @ID:	eng|bates|MOT|||||Mother|||
-@Comment:	Out of date @Types should be replaced
-@Types:	old1, old2, old3
+@Comment:	@Types should be inserted before first utterance.
+@Types:	top1, top2, top3
 *CHI:	word .
 @End
